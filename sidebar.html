@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SIDEBAR TEST</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+    <a href="#" class="btn btn-success" id="menu-toggle">TOGGLE SIDE MENU</a>
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Page content-->
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>SIDEBAR MENU TEMPLATE</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita labore quis consectetur repudiandae iure ut odio voluptatum minus maiores nesciunt temporibus ducimus magni explicabo laudantium incidunt, assumenda reiciendis numquam ullam velit vel sequi rerum omnis tempore repellendus. Voluptatibus tempore repudiandae quod provident. Totam velit, maiores inventore repellendus deserunt repellat. Veritatis sed laboriosam magni error, assumenda enim rerum! Laboriosam, maiores, praesentium.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+  #sidebar-wrapper{
+    position: absolute;
+    width: 0;
+    height: 100%;
+    border: 2px solid red;
+    overflow-y: hidden;
+    opacity: 0.9;
+    z-index: 1;
+  }
+
+  #page-content-wrapper{
+    position: absolute;
+    width: 100%
+    padding: 10px;
+    border: 5px solid blue;
+  }
+
+  #wrapper.menuDisplayed #sidebar-wrapper {
+    width: 250px;
+  }
+
+  #wrapper.menuDisplayed #page-content-wrapper{
+    padding-left: 250px;
+  }
+
+  .sidebar-nav{
+    padding: 0;
+    list-style: none;
+    background: black;
+    height: 100%;
+  }
+
+  .sidebar-nav li{
+    text-indent: 20px;
+    line-height: 80px;
+  }
+
+  .sidebar-nav li a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-style: bold;
+  }
+
+  .sidebar-nav li a:hover{
+    background-color: purple;
+  }
+
+  </style>
+
+  <script>
+  $("#menu-toggle").click(function(e){
+    e.preventDefault();
+    $("#wrapper").toggleClass("menuDisplayed");
+  });
+
+  </script>
+
+</body>
+</html>
